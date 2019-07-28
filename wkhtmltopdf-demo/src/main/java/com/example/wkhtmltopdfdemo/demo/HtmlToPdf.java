@@ -3,12 +3,13 @@ package com.example.wkhtmltopdfdemo.demo;
 import java.io.File;
 
 /**
+ * html 转 pdf 工具类
  * @author xulia
  * @create 2019-07-27 13:29
  */
 public class HtmlToPdf {
     //wkhtmltopdf在系统中的路径
-    private static final String toPdfTool = "F:/wkhtmltopdf/wkhtmltopdf/bin/wkhtmltopdf.exe";
+    private static final String TOPDFTOOL = "F:/wkhtmltopdf/wkhtmltopdf/bin/wkhtmltopdf.exe";
     /**
      * html转pdf
      * @param srcPath html路径，可以是硬盘上的路径，也可以是网络路径
@@ -24,7 +25,7 @@ public class HtmlToPdf {
         }
 
         StringBuilder cmd = new StringBuilder();
-        cmd.append(toPdfTool);
+        cmd.append(TOPDFTOOL);
         cmd.append(" ");
         //页眉下面的线
         cmd.append("  --header-line");
