@@ -11,6 +11,8 @@ public class ZksdkDemoApplicationTests {
 
     @Test
     public void contextLoads() {
+        String property = System.getProperty("java.library.path");
+        System.out.println("property = " + property);
     }
 
 }
