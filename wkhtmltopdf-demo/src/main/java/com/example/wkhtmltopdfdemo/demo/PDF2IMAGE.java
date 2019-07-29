@@ -15,7 +15,7 @@ import java.io.IOException;
  */
 public class PDF2IMAGE {
     public static void main(String[] args) {
-        pdf2Image("G:/temp/3.pdf", "G:/temp/image", 300);
+        pdf2Image("G:/temp/2.pdf", "G:/temp/image", 300);
     }
 
     /***
@@ -81,3 +81,4 @@ public class PDF2IMAGE {
     }
 
 }
+

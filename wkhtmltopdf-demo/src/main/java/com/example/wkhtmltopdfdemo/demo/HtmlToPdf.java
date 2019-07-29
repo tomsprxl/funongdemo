@@ -9,7 +9,7 @@ import java.io.File;
  */
 public class HtmlToPdf {
     //wkhtmltopdf在系统中的路径
-    private static final String TOPDFTOOL = "F:/wkhtmltopdf/wkhtmltopdf/bin/wkhtmltopdf.exe";
+    private static final String TOPDFTOOL = "G:/util/wkhtmltopdf/bin/wkhtmltopdf.exe";
     /**
      * html转pdf
      * @param srcPath html路径，可以是硬盘上的路径，也可以是网络路径
@@ -56,6 +56,6 @@ public class HtmlToPdf {
     }
 
     public static void main(String[] args) {
-        HtmlToPdf.convert("https://yq.aliyun.com/articles/91154", "G:/temp/2.pdf");
+        HtmlToPdf.convert("https://www.hao123.com", "G:/temp/2.pdf");
     }
 }
