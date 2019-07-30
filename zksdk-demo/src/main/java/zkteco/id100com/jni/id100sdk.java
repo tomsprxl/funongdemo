@@ -1,4 +1,4 @@
-package com.example.zksdkdemo.zk;
+package zkteco.id100com.jni;
 
 /**
  * 	IDCardReader Java Native Interface(仅支持Utf8编码)
@@ -13,8 +13,9 @@ public class id100sdk
 	 * <code>id100sdk</code> 身份证阅读器接口类
 	 */
 	static  
-	{
-		System.loadLibrary("libx86/termb");
+	{  
+//		System.load("C:\\Windows\\SysWOW64\\x64\\termb.dll");
+		System.loadLibrary("x64/termb");
 	}
 	
 	/**

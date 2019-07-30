@@ -1,6 +1,6 @@
-package com.example.zksdkdemo.zk;
-
 import javax.swing.JOptionPane;
+
+import zkteco.id100com.jni.*;
 
 
 public class testDemo {
@@ -31,7 +31,7 @@ public class testDemo {
             //循环读取
             long tickStart = System.currentTimeMillis();
             int ret = 0;
-            while ((ret = id100sdk.ReadContent(1)) != 1 && System.currentTimeMillis() < 2000) {
+            while ((ret = id100sdk.ReadContent(2)) != 1 && System.currentTimeMillis() < 2000) {
                 try {
                     Thread.sleep(50);
                 } catch (InterruptedException e) {
@@ -39,10 +39,10 @@ public class testDemo {
                     e.printStackTrace();
                 }
             }
-            if (ret != 1) {
-                System.out.printf("ReadContent fail\n");
-                return;
-            }
+//            if (ret != 1) {
+//                System.out.printf("ReadContent fail\n");
+//                return;
+//            }
 
             System.out.printf("ReadContent succ\n");
             System.out.printf("输出文件路径：" + path + "\n");
@@ -56,8 +56,9 @@ public class testDemo {
             System.out.printf("常住地址=%s\n", id100sdk.getAddress());
             System.out.printf("签发机关=%s\n", id100sdk.getIssue());
             System.out.printf("有效期=%s-%s\n", id100sdk.getEffectedDate(), id100sdk.getExpireDate());
-            //System.out.printf("bmp base64头像=%s\n", id100sdk.getBMPPhotoBase64());
-            //System.out.printf("jpg base64头像=%s\n", id100sdk.getJPGPhotoBase64());
+            System.out.printf("bmp base64头像=%s\n", id100sdk.getBMPPhotoBase64());
+            System.out.printf("jpg base64头像=%s\n", id100sdk.getJPGPhotoBase64());
+
 
         }
 
