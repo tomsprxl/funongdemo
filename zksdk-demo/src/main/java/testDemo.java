@@ -31,7 +31,7 @@ public class testDemo {
             //循环读取
             long tickStart = System.currentTimeMillis();
             int ret = 0;
-            while ((ret = id100sdk.ReadContent(2)) != 1 && System.currentTimeMillis() < 2000) {
+            while ((ret = id100sdk.ReadContent(1)) != 1 && System.currentTimeMillis() < 2000) {
                 try {
                     Thread.sleep(50);
                 } catch (InterruptedException e) {
