@@ -1,14 +1,12 @@
-import javax.swing.JOptionPane;
-
-import zkteco.id100com.jni.*;
+import zkteco.id100com.jni.id100sdk;
 
 
 public class testDemo {
 
 
     public static void main(String[] args) {
-        JOptionPane.showMessageDialog(null,
-                "等待调试!", "系统信息", JOptionPane.INFORMATION_MESSAGE);
+//        JOptionPane.showMessageDialog(null,
+//                "等待调试!", "系统信息", JOptionPane.INFORMATION_MESSAGE);
         //----读身份证测试
         String path = id100sdk.getPath();
         if (id100sdk.InitCommExt() <= 0) {

@@ -13,8 +13,7 @@ public class id100sdk
 	 * <code>id100sdk</code> 身份证阅读器接口类
 	 */
 	static  
-	{  
-//		System.load("C:\\Windows\\SysWOW64\\x64\\termb.dll");
+	{
 		System.loadLibrary("x64/termb");
 	}
 	
