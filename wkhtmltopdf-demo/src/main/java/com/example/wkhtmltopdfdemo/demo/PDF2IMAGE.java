@@ -15,7 +15,8 @@ import java.io.IOException;
  */
 public class PDF2IMAGE {
     public static void main(String[] args) {
-        pdf2Image("G:/temp/2.pdf", "G:/temp/image", 300);
+        pdf2Image("F:\\code\\private\\funongdemo\\wkhtmltopdf-demo\\hetong.pdf",
+                "F:\\code\\private\\funongdemo\\wkhtmltopdf-demo\\image", 300);
     }
 
     /***

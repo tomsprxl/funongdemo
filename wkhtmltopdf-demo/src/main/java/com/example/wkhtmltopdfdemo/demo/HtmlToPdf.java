@@ -27,6 +27,7 @@ public class HtmlToPdf {
         StringBuilder cmd = new StringBuilder();
         cmd.append(TOPDFTOOL);
         cmd.append(" ");
+        cmd.append("  --encoding utf-8");
         //页眉下面的线
         cmd.append("  --header-line");
         //页眉中间内容
@@ -56,6 +57,7 @@ public class HtmlToPdf {
     }
 
     public static void main(String[] args) {
-        HtmlToPdf.convert("https://www.hao123.com", "G:/temp/2.pdf");
+        HtmlToPdf.convert("F:\\code\\private\\funongdemo\\wkhtmltopdf-demo\\hetong.html",
+                "F:\\code\\private\\funongdemo\\wkhtmltopdf-demo\\hetong.pdf");
     }
 }
