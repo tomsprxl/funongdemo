@@ -2,6 +2,7 @@ package com.example.wkhtmltopdfdemo.demo;
 
 import com.example.wkhtmltopdfdemo.dao.PDFData;
 import com.example.wkhtmltopdfdemo.pdftemplateenum.PdfTemplateEnum;
+import com.example.wkhtmltopdfdemo.util.FilePathUtil;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -42,20 +43,22 @@ public class StrToHtml {
         strToHtml(PdfTemplateEnum.TEMPLATE_ENUM1.getMemo(), pdfData);
     }
 
-
     /**
      * @param str     html 模板
      * @param pdfData 数据
      * @throws FileNotFoundException
      */
-    public static void strToHtml(String str, PDFData pdfData) {
+    public static String strToHtml(String str, PDFData pdfData) {
+        String htmlPath = FilePathUtil.getHtmlPath();
         PrintStream printStream = null;
-        try {
-            printStream = new PrintStream(new FileOutputStream("src/hetong.html"));//路径默认在项目根目录下
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
 
+        if (createDirectory(FilePathUtil.getFilePath())) {
+            try {
+                printStream = new PrintStream(new FileOutputStream(htmlPath));//路径默认在项目根目录下
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
 
         StringBuilder sb = new StringBuilder();
         sb.append("<!DOCTYPE html>\n" +
@@ -71,6 +74,7 @@ public class StrToHtml {
                 "</html>");
         printStream.println(str);
 
+        return htmlPath;
     }
 
     /**
@@ -80,32 +84,41 @@ public class StrToHtml {
      * @return
      */
     private static String getstr(String str, PDFData pdfData) {
-//        //去除换行
-////        str.replace("\\n\"+\"", "");
+        str = str.replaceAll("\\s*", "");
 
-        str = str.replace("#contract_number#", pdfData.getContract_number());
-        str = str.replace("#sign_address#", pdfData.getSign_address());
-        str = str.replace("#sign_time#", pdfData.getSign_time());
-        str = str.replace("#customers_name#", pdfData.getCustomers_name());
-        str = str.replace("#buyer_phone#", pdfData.getBuyer_phone());
-        str = str.replace("#buyer_contract_name#", pdfData.getBuyer_contract_name());
-        str = str.replace("#good_tons#", pdfData.getGood_tons());
-        str = str.replace("#good_name#", pdfData.getGood_name());
-        str = str.replace("#good_num#", pdfData.getGood_num());
-        str = str.replace("#good_price#", pdfData.getGood_price());
-        str = str.replace("#good_num#", pdfData.getGood_num());
-        str = str.replace("#contract_total_price#", pdfData.getContract_total_price());
-        str = str.replace("#contract_remark#", pdfData.getContract_remark());
-        str = str.replace("#rmb#", pdfData.getRmb());
-        str = str.replace("#egg_attr#", pdfData.getEgg_attr());
-        str = str.replace("#cash_money#", pdfData.getCash_money());
-        str = str.replace("#delivery_start_time#", pdfData.getDelivery_start_time());
-        str = str.replace("#delivery_end_time#", pdfData.getDelivery_end_time());
-        str = str.replace("#delivery_address#", pdfData.getDelivery_address());
-        str = str.replace("#customer_payments_name#", pdfData.getCustomer_payments_name());
-        str = str.replace("#customer_payments_china_id#", pdfData.getCustomer_payments_china_id());
+        str = str.replaceAll("#contract_number#", pdfData.getContract_number());
+        str = str.replaceAll("#sign_address#", pdfData.getSign_address());
+        str = str.replaceAll("#sign_time#", pdfData.getSign_time());
+        str = str.replaceAll("#customers_name#", pdfData.getCustomers_name());
+        str = str.replaceAll("#buyer_phone#", pdfData.getBuyer_phone());
+        str = str.replaceAll("#buyer_contract_name#", pdfData.getBuyer_contract_name());
+        str = str.replaceAll("#good_tons#", pdfData.getGood_tons());
+        str = str.replaceAll("#good_name#", pdfData.getGood_name());
+        str = str.replaceAll("#good_num#", pdfData.getGood_num());
+        str = str.replaceAll("#good_price#", pdfData.getGood_price());
+        str = str.replaceAll("#good_num#", pdfData.getGood_num());
+        str = str.replaceAll("#contract_total_price#", pdfData.getContract_total_price());
+        str = str.replaceAll("#contract_remark#", pdfData.getContract_remark());
+        str = str.replaceAll("#rmb#", pdfData.getRmb());
+        str = str.replaceAll("#egg_attr#", pdfData.getEgg_attr());
+        str = str.replaceAll("#cash_money#", pdfData.getCash_money());
+        str = str.replaceAll("#delivery_start_time#", pdfData.getDelivery_start_time());
+        str = str.replaceAll("#delivery_end_time#", pdfData.getDelivery_end_time());
+        str = str.replaceAll("#delivery_address#", pdfData.getDelivery_address());
+        str = str.replaceAll("#customer_payments_name#", pdfData.getCustomer_payments_name());
+        str = str.replaceAll("#customer_payments_china_id#", pdfData.getCustomer_payments_china_id());
 
         return str;
+    }
+
+
+    private static boolean createDirectory(String folder) {
+        File dir = new File(folder);
+        if (dir.exists()) {
+            return true;
+        } else {
+            return dir.mkdirs();
+        }
     }
 
 

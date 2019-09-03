@@ -17,7 +17,7 @@ public class GenerateRandomCodeUtil {
             for (int i = 0; i < len; i++) {
                 result.append(Integer.toHexString(new Random().nextInt(16)));
             }
-            return result.toString().toUpperCase();
+            return result.toString();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -40,6 +40,7 @@ public class GenerateRandomCodeUtil {
         return year + "-" + month + "-" + day + "-" + hour + "-" + minute + "-" + second + "-" + randomHexString;
 
     }
+
 
     public static void main(String[] args) {
         String s = generatePDFOrImageCode();

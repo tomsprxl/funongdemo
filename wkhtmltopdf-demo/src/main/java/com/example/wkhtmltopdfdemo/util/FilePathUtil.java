@@ -21,14 +21,28 @@ public class FilePathUtil {
         int month = cal.get(Calendar.MONTH) + 1; // 0代表1月，11代表12月
         int day = cal.get(Calendar.DAY_OF_MONTH);
 
-        String newFath = ROOTPATH + File.separator + year + "-" + month + "-" + day;
 
-        return null;
+        return ROOTPATH + File.separator + year + "-" + month + "-" + day;
 
     }
 
+    public static String getPdfPath() {
+        return getFilePath() + File.separator+GenerateRandomCodeUtil.generatePDFOrImageCode()+".pdf";
+    }
+
+    public static String getHtmlPath() {
+        return getFilePath() + File.separator+GenerateRandomCodeUtil.generatePDFOrImageCode()+".html";
+    }
+
+    public static String getPngPath() {
+        return getFilePath() + File.separator+GenerateRandomCodeUtil.generatePDFOrImageCode()+".png";
+    }
+
     public static void main(String[] args) {
-        System.out.println(getFilePath());
+//        System.out.println(getPdfPath());
+//        System.out.println(getPngPath());
+//        System.out.println(getHtmlPath());
+//        System.out.println(getFilePath());
     }
 
 

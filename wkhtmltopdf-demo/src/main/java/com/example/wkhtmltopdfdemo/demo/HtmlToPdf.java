@@ -1,5 +1,7 @@
 package com.example.wkhtmltopdfdemo.demo;
 
+import com.example.wkhtmltopdfdemo.util.FilePathUtil;
+
 import java.io.File;
 
 /**
@@ -20,7 +22,7 @@ public class HtmlToPdf {
      * @param destPath pdf保存路径
      * @return 转换成功返回true
      */
-    public static boolean convert(String srcPath, String destPath) {
+    public static String convert(String srcPath, String destPath) {
         File file = new File(destPath);
         File parent = file.getParentFile();
         //如果pdf保存路径不存在，则创建路径
@@ -57,12 +59,12 @@ public class HtmlToPdf {
             e.printStackTrace();
         }
 
-        return result;
+        return destPath;
     }
 
 
     public static void main(String[] args) {
-        HtmlToPdf.convert("src/hetong.html",
-                "src/hetong.pdf");
+        HtmlToPdf.convert("src\\files\\contract_pdf\\2019-9-3\\2019-9-3-13-51-31-e6475b8976805.html",
+                FilePathUtil.getPdfPath());
     }
 }
