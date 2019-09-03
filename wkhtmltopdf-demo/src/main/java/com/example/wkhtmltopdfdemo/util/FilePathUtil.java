@@ -39,10 +39,7 @@ public class FilePathUtil {
     }
 
     public static void main(String[] args) {
-//        System.out.println(getPdfPath());
-//        System.out.println(getPngPath());
-//        System.out.println(getHtmlPath());
-//        System.out.println(getFilePath());
+
     }
 
 

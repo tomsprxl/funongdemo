@@ -60,8 +60,6 @@ public class PDF2IMAGE {
                     String imgFilePathPrefix = imgFolderPath + File.separator + imagePDFName;
                     imgFilePath = new StringBuffer();
                     imgFilePath.append(imgFilePathPrefix);
-                    imgFilePath.append("_");
-                    imgFilePath.append(String.valueOf(i + 1));
                     imgFilePath.append(".png");
                     File dstFile = new File(imgFilePath.toString());
                     BufferedImage image = renderer.renderImageWithDPI(i, dpi);

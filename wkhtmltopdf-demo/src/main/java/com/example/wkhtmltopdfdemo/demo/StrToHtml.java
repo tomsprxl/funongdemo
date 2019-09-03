@@ -61,18 +61,17 @@ public class StrToHtml {
         }
 
         StringBuilder sb = new StringBuilder();
-        sb.append("<!DOCTYPE html>\n" +
-                "<html lang=\"en\">\n" +
+        sb.append("<html>\n" +
                 "<head>\n" +
-                "    <meta charset=\"UTF-8\">\n" +
-                "    <title>Title</title>\n" +
+                "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n" +
+                "   <title>PDF合同</title>\n" +
                 "</head>\n" +
                 "<body>");
-        str = getstr(str, pdfData);
+        str = getStr(str, pdfData);
         sb.append(str);
         sb.append("</body>\n" +
                 "</html>");
-        printStream.println(str);
+        printStream.println(sb.toString());
 
         return htmlPath;
     }
@@ -83,8 +82,14 @@ public class StrToHtml {
      * @param str
      * @return
      */
-    private static String getstr(String str, PDFData pdfData) {
-        str = str.replaceAll("\\s*", "");
+    private static String getStr(String str, PDFData pdfData) {
+
+
+        str = str.replace("\\r", "");
+        str = str.replace("\\t", "");
+        str = str.replace("\\n", "");
+        str = str.replace("\\", "");
+
 
         str = str.replaceAll("#contract_number#", pdfData.getContract_number());
         str = str.replaceAll("#sign_address#", pdfData.getSign_address());
