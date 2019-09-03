@@ -14,9 +14,10 @@ import java.io.IOException;
  * @create 2019-07-27 14:01
  */
 public class PDF2IMAGE {
+    //项目根路径/files/contract_pdf/2019-09-02/2019-09-02-17-53-41-5d6ce6a5e4113.png
     public static void main(String[] args) {
-        pdf2Image("F:\\code\\private\\funongdemo\\wkhtmltopdf-demo\\hetong.pdf",
-                "F:\\code\\private\\funongdemo\\wkhtmltopdf-demo\\image", 300);
+        pdf2Image("src"+File.separator+"hetong.pdf",
+                "src"+File.separator+"hetong.png", 300);
     }
 
     /***
@@ -80,6 +81,7 @@ public class PDF2IMAGE {
             return dir.mkdirs();
         }
     }
+
 
 }
 

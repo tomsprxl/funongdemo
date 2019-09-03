@@ -6,7 +6,7 @@ import lombok.Getter;
 public enum PdfTemplateEnum {
 
     TEMPLATE_ENUM1("<div style=\"font-size: 24px; font-weight: 700;text-align: center\">合同</div>\n" +
-            "<div><span style=\"font-size: 24px;\">合同编号：#contract_number#             合同签订地：#sign_address#            签订时间：#sign_time#<br></span></div>\n" +
+            "<div><span style=\"font-size: 24px;\">合同编号：#contract_number#                  合同签订地：#sign_address#              签订时间：#sign_time#<br></span></div>\n" +
             "<div><span style=\"font-size: 24px; font-weight: bold;\">甲方：#customers_name#      </span></div>\n" +
             "<div><span style=\"font-weight: bold; font-size: 24px;\">电话：#buyer_phone#                    联系人：#buyer_contract_name#                        <br></span></div>\n" +
             "<div><span style=\"font-weight: bold; font-size: 24px;\">乙方：上海甜头菜电子商务有限公司         </span></div>\n" +

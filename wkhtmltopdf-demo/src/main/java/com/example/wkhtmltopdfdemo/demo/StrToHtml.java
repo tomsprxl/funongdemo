@@ -3,6 +3,7 @@ package com.example.wkhtmltopdfdemo.demo;
 import com.example.wkhtmltopdfdemo.dao.PDFData;
 import com.example.wkhtmltopdfdemo.pdftemplateenum.PdfTemplateEnum;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
@@ -50,7 +51,7 @@ public class StrToHtml {
     public static void strToHtml(String str, PDFData pdfData) {
         PrintStream printStream = null;
         try {
-            printStream = new PrintStream(new FileOutputStream("hetong.html"));//路径默认在项目根目录下
+            printStream = new PrintStream(new FileOutputStream("src/hetong.html"));//路径默认在项目根目录下
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -79,8 +80,8 @@ public class StrToHtml {
      * @return
      */
     private static String getstr(String str, PDFData pdfData) {
-        //去除换行
-        str.replace("\\n\"+\"", "");
+//        //去除换行
+////        str.replace("\\n\"+\"", "");
 
         str = str.replace("#contract_number#", pdfData.getContract_number());
         str = str.replace("#sign_address#", pdfData.getSign_address());
