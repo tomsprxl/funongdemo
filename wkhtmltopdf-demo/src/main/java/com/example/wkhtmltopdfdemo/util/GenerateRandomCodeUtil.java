@@ -42,9 +42,5 @@ public class GenerateRandomCodeUtil {
     }
 
 
-    public static void main(String[] args) {
-        String s = generatePDFOrImageCode();
-        System.out.println("s = " + s);
-    }
-
+   
 }

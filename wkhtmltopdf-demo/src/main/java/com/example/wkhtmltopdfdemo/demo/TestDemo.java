@@ -4,6 +4,8 @@ import com.example.wkhtmltopdfdemo.dao.PDFData;
 import com.example.wkhtmltopdfdemo.pdftemplateenum.PdfTemplateEnum;
 import com.example.wkhtmltopdfdemo.util.FilePathUtil;
 
+import java.io.File;
+
 /**
  * 描述:
  *
@@ -43,9 +45,7 @@ public class TestDemo {
         //pdf 转 png
         String imagePath = PDF2IMAGE.pdf2Image(pdfPath, FilePathUtil.getFilePath(), 300);
 
-        System.out.println("strToHtmlPath = " + strToHtmlPath);
-        System.out.println("pdfPath = " + pdfPath);
-        System.out.println("imagePath = " + imagePath);
+        new File(strToHtmlPath).delete();
 
 
     }

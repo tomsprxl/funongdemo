@@ -40,7 +40,8 @@ public class StrToHtml {
         pdfData.setDelivery_address("北京汇福油厂");
         pdfData.setCustomer_payments_name("");
         pdfData.setCustomer_payments_china_id("");
-        strToHtml(PdfTemplateEnum.TEMPLATE_ENUM1.getMemo(), pdfData);
+        String strToHtmlPath = strToHtml(PdfTemplateEnum.TEMPLATE_ENUM1.getMemo(), pdfData);
+        System.out.println("strToHtmlPath = " + strToHtmlPath);
     }
 
     /**
